@@ -1,0 +1,17 @@
+<form (ngSubmit)="calculate(loanForm.value)" #loanForm="ngForm">
+    <div>
+        <label for="loanAmount">Loan Amount(₹): </label>
+        <input type="number" name="loanAmount" id="loanAmount" [ngModel]="1000" min="1" required>
+    </div>
+    <div>
+        <label for="annualIntersetRate">Interset Rate(%):</label>
+        <input type="number" name="annualIntersetRate" id="annualIntersetRate" [ngModel]="0.1" min="0.1" step="0.1" required>
+    </div>
+    <div>
+        <label for="loanTerm">Loan Term(in yrs):</label>
+        <input type="number" name="loanTerm" id="loanTerm"  [ngModel]="20" min="1" required>
+    </div>
+    <div>
+        <button [disabled]="loanForm.invalid" type="submit">Calculate</button>
+    </div>
+</form>
